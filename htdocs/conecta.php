@@ -2,7 +2,7 @@
 session_start(); // Inicia a sessão em todas as páginas que incluírem este arquivo
 
 // Configurações do banco de dados MySQL
-$host = "localhost";
+$host = "127.0.0.1";
 $banco = "sistema";
 $usuario = "root";
 $senha = "";
