@@ -8,7 +8,7 @@ if (!isset($_SESSION['email_usuario'])) {
 //Verifica se o formulário enviou algo
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nova_senha = $_POST['nova_senha'];
-    $email_usuario = $_SESSION['email_usuario'];
+    $email_usuario = $_SESSION['email'];
 
     // Query para alteração da senha do usuário
     $sql = "";

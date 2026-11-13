@@ -2,11 +2,11 @@
 include 'conecta.php';
 //Verifica se o formulário enviou algo
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email_usuario = $_POST['email_usuario'];
-    $senha_usuario = $_POST['senha_usuario'];
+    $email_usuario = $_POST['email'];
+    $senha_usuario = $_POST['senha'];
 
     // Query de verificação do usuário e senha
-    $sql = "SELECT * FROM usuarios WHERE email_usuario = :email_usuario";
+    $sql = "SELECT * FROM usuarios WHERE email = :email_usuario";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':email_usuario', $email_usuario);
 
@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = $stmt->fetch();
 
     // Verifica se o usuário existe e se a senha confere com o hash salvo no banco
-    if ($usuario && password_verify($senha_usuario, $usuario['senha_usuario'])) {
-        $_SESSION['email_usuario'] = $usuario['email_usuario'];
+    if ($usuario && password_verify($senha_usuario, $usuario['senha'])) {
+        $_SESSION['email'] = $usuario['email'];
         header('Location: inicio.php'); // Redireciona para a página inicial após login
         exit;
     } else {

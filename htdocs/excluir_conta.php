@@ -2,14 +2,14 @@
 include 'conecta.php';
 
 // Verifica se o usuário está logado
-if (!isset($_SESSION['email_usuario'])) {
+if (!isset($_SESSION['email'])) {
     header('Location: index.php'); // Redireciona para a página de login
     exit();
 }
 
 //Verifica se o formulário enviou algo
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email_usuario = $_SESSION['email_usuario'];// Usa o email do usuário logado para excluir
+    $email_usuario = $_SESSION['email'];// Usa o email do usuário logado para excluir
 
     // Define a query para excluir o usuário do banco de dados
     $sql = " ";
