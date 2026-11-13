@@ -22,7 +22,7 @@ $email_usuario = $_SESSION['email_usuario'];
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <!-- Logo -->
-        <img class="navbar-brand" src="https://placehold.co/150x70?text=Meu%20App" alt="Logo" height="50">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/JoJo%27s_Bizarre_Adventure_logo.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" alt="Logo" class="img-fluid mb-4" style="max-height: 70px;">
 
         <!-- Botão do menu colapsável para telas menores -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">

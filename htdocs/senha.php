@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
         <form method="POST" action="" class="w-100" style="max-width: 400px;">
             <div class="d-flex justify-content-center mb-4">
-                <img src="https://placehold.co/150x70?text=Meu%20App" alt="Logo" class="img-fluid">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/JoJo%27s_Bizarre_Adventure_logo.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" alt="Logo" class="img-fluid mb-4" style="max-height: 70px;">
             </div>
             <h1 class="h3 mb-3 fw-normal text-center">Alterar Senha</h1>
             <div class="form-floating mb-3">
