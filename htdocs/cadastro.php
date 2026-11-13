@@ -3,8 +3,8 @@ include 'conecta.php';
 
 //Verifica se o formulário enviou algo
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email_usuario = $_POST['email'];
-    $senha_usuario = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $email_usuario = $_POST['email_usuario'];
+    $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT);
 
     // Query de inserção
     $sql = "INSERT INTO usuarios (email, senha) VALUES (:email_usuario, :senha_usuario)";

@@ -2,8 +2,8 @@
 include 'conecta.php';
 //Verifica se o formulário enviou algo
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email_usuario = $_POST['email'];
-    $senha_usuario = $_POST['senha'];
+    $email_usuario = $_POST['email_usuario'];
+    $senha_usuario = $_POST['senha_usuario'];
 
     // Query de verificação do usuário e senha
     $sql = "SELECT * FROM usuarios WHERE email = :email_usuario";
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verifica se o usuário existe e se a senha confere com o hash salvo no banco
     if ($usuario && password_verify($senha_usuario, $usuario['senha'])) {
-        $_SESSION['email'] = $usuario['email'];
+        $_SESSION['email_usuario'] = $usuario['email'];
         header('Location: inicio.php'); // Redireciona para a página inicial após login
         exit;
     } else {

@@ -7,11 +7,11 @@ if (!isset($_SESSION['email_usuario'])) {
 }
 //Verifica se o formulário enviou algo
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nova_senha = $_POST['nova_senha'];
-    $email_usuario = $_SESSION['email'];
+    $nova_senha = password_hash($_POST['nova_senha'], PASSWORD_DEFAULT);
+    $email_usuario = $_SESSION['email_usuario'];
 
     // Query para alteração da senha do usuário
-    $sql = "";
+    $sql = "UPDATE usuarios SET senha = :nova_senha WHERE email = :email_usuario";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':nova_senha', $nova_senha);
     $stmt->bindParam(':email_usuario', $email_usuario);
