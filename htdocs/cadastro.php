@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha_usuario = password_hash($_POST['senha_usuario'], PASSWORD_DEFAULT);
 
     // Query de inserção
-    $sql = "INSERT INTO usuarios (email_usuario, senha_usuario) VALUES (:email_usuario, :senha_usuario)";
+    $sql = "INSERT INTO usuarios (email, senha) VALUES (:email_usuario, :senha_usuario)";
     
     try {
         $stmt = $pdo->prepare($sql);
